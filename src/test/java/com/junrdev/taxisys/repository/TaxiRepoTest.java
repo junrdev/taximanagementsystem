@@ -96,4 +96,20 @@ public class TaxiRepoTest {
 
         System.out.println("taxis = " + taxis);
     }
+
+//    @Test
+//    void findTaxiByLocation(){
+//
+//        List<Taxi> taxis = taxiRepo.findByOwnerAddressLocation("Eldoret");
+//
+//        System.out.println("taxis = " + taxis);
+//    }
+
+    @Test
+    void findTaxiByAvailability(){
+
+        List<Taxi> taxis = taxiRepo.getTaxisByAvailability(true);
+
+        System.out.println("taxis = " + taxis);
+    }
 }
