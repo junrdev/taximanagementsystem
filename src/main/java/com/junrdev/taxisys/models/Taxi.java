@@ -11,7 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "taxis")
+@Table(name = "taxis", uniqueConstraints ={
+        @UniqueConstraint(name = "unique_plate_number", columnNames = { "plateNumber"})
+})
 public class Taxi {
 
     @SequenceGenerator(name = "taxi_seq", allocationSize = 1, sequenceName = "taxi_seq")
@@ -33,6 +35,10 @@ public class Taxi {
     private float loadedWeight;
 
     private float maxWeight;
+
+    @ManyToOne()
+    @JoinColumn(name = "owner_id", referencedColumnName = "id", nullable = false)
+    private Owner owner;//represents the owner id
 }
 
 
