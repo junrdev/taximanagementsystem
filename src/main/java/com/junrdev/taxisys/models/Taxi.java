@@ -39,6 +39,8 @@ public class Taxi {
     @ManyToOne()
     @JoinColumn(name = "owner_id", referencedColumnName = "id", nullable = false)
     private Owner owner;//represents the owner id
+
+    private Boolean isAvailable;//if the taxi is available for assignment
 }
 
 
