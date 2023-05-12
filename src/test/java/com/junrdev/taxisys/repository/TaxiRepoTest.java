@@ -89,4 +89,11 @@ public class TaxiRepoTest {
 
         System.out.println("Deleted taxi");
     }
+
+    @Test
+    void findTaxiByOwnerId(){
+        List<Taxi> taxis = taxiRepo.findByOwnerId(1l);
+
+        System.out.println("taxis = " + taxis);
+    }
 }
